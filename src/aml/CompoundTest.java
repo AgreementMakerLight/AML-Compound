@@ -55,14 +55,14 @@ public class CompoundTest
 
 		//Paths for the .owl files to align. targetPath2 should be the qualifier ontology.
 		String sourcePath = "store/ontologies/mp.owl";
-		String targetPath1 = "store/ontologies/go.owl";
+		String targetPath1 = "store/ontologies/cl.owl";
 		String targetPath2 = "store/ontologies/pato.owl";
 
 		//referencePath1 is used for the evaluation of the first step. It must be a 1:1 alignment.
-		String referencePath1 = "store/ontologies/mp-go-ref.rdf";
+		String referencePath1 = "store/ontologies/mp-cl-ref.rdf";
 		
 		//referencePath2 is used for the evaluation of the second step. It must be a compound alignment.
-		String referencePath2 = "store/ontologies/mp-go-pato-ref.rdf";
+		String referencePath2 = "store/ontologies/mp-cl-pato-ref.rdf";
 
 		long time = System.currentTimeMillis()/1000;
 
