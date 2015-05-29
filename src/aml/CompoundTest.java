@@ -49,7 +49,7 @@ public class CompoundTest
 
 		//true for performing a permissive ranked selection. false for performing a greedy selection step.
 		boolean ranked = false;
-		
+
 		//true to open the ontologies with transitive closure.
 		boolean transitive = false;
 
@@ -60,7 +60,7 @@ public class CompoundTest
 
 		//referencePath1 is used for the evaluation of the first step. It must be a 1:1 alignment.
 		String referencePath1 = "store/ontologies/mp-cl-ref.rdf";
-		
+
 		//referencePath2 is used for the evaluation of the second step. It must be a compound alignment.
 		String referencePath2 = "store/ontologies/mp-cl-pato-ref.rdf";
 
@@ -78,7 +78,7 @@ public class CompoundTest
 		System.out.println("Running first WordMatcher");
 		WordMatcher wm1 = new WordMatcher();
 		Alignment w1 = wm1.targetMatch(threshold);
-		
+
 		//Test evaluation after the first WordMatcher
 		if(!referencePath1.equals(""))
 		{
@@ -87,7 +87,7 @@ public class CompoundTest
 			System.out.println(aml.getEvaluation().replaceAll("%", ""));
 		}
 
-		
+
 		HashMap<Mapping,List<String>> combMap = addSubMap(w1);
 
 		System.out.println("Running second WordMatcher..");
@@ -138,7 +138,7 @@ public class CompoundTest
 		}
 		System.out.println("Finished.");
 	}
-	
+
 	/**
 	 * 
 	 * @param w1: 1:1 alignment
@@ -147,74 +147,70 @@ public class CompoundTest
 	public static HashMap<Mapping,List<String>> addSubMap (Alignment w1)
 	{
 		Set<String> stopSet = StopList.read();
-		
+
 		//HashMap keeps the mapping as key and a list of unmatched words of the mapping's source.
 		HashMap<Mapping,List<String>> combMap = new HashMap<Mapping, List<String>>();
-		
-		Lexicon sLex = aml.getSource().getLexicon();
-		Lexicon tLex = aml.getTarget().getLexicon();
 
 		for(Mapping m : w1)
 		{
 			List<SubMapping> subMap = m.getSubMappings();
 			for(SubMapping s : subMap)
 			{
-
 				int srcId = -1;
 				int tgtId = -1;
 				double sim = s.getSimilarity(); 
 				double weight = s.getWeight();
-				for(int i : sLex.getClasses(s.getLabelSource()))
+
+				srcId = s.getSourceId();
+				tgtId = s.getTargetId();
+
+
+				String wordsSource = s.getLabelSource();
+				String wordsTarget = s.getLabelTarget();
+				List<String> sWords = new ArrayList<String>();				
+				List<String> tWords = new ArrayList<String>();	
+				for(String w:wordsSource.split(" "))
+					sWords.add(w);
+				for(String w:wordsTarget.split(" "))
+					tWords.add(w);
+				List<String> newSet = new ArrayList<String>();
+				HashMap<String, Integer> aligned = new HashMap<String, Integer>();
+				for(String word:sWords)
 				{
-					srcId = i;
-
-					for(int j : tLex.getClasses(s.getLabelTarget()))
+					if(!aligned.containsKey(word))
+						aligned.put(word,1);
+					else
+						aligned.put(word,aligned.get(word)+1);
+					if ((!tWords.contains(word)) && !stopSet.contains(word) && word.matches("^[a-zA-Z0-9]*$"))
 					{
-						tgtId = j;
-
-						String wordsSource = s.getLabelSource();
-						String wordsTarget = s.getLabelTarget();
-						List<String> sWords = new ArrayList<String>();				
-						List<String> tWords = new ArrayList<String>();	
-						for(String w:wordsSource.split(" "))
-							sWords.add(w);
-						for(String w:wordsTarget.split(" "))
-							tWords.add(w);
-						List<String> newSet = new ArrayList<String>();
-						HashMap<String, Integer> aligned = new HashMap<String, Integer>();
-						for(String word:sWords)
-						{
-							if(!aligned.containsKey(word))
-								aligned.put(word,1);
-							else
-								aligned.put(word,aligned.get(word)+1);
-							if ((!tWords.contains(word)) && !stopSet.contains(word) && word.matches("^[a-zA-Z0-9]*$"))
-							{
-								word = word.replaceAll("[()]", "");
-								newSet.add(word);
-							}
-						}
-						
-						HashMap<String,Integer> mapped = new HashMap<String,Integer>();
-						for(String word:tWords)
-						{
-							if(!mapped.containsKey(word))
-								mapped.put(word,1);
-							else
-								mapped.put(word,mapped.get(word)+1);
-						}
-						
-						//If the a mapping as repeated unmatched words, a 0.1 weight multiplied to the original weight.
-						for(String w:mapped.keySet())
-						{
-							if(mapped.get(w)>1)
-								weight *= 0.1;
-						}
-						combMap.put(new Mapping(srcId, tgtId, sim, weight),newSet);
-
-
+						word = word.replaceAll("[()]", "");
+						newSet.add(word);
 					}
 				}
+
+				HashMap<String,Integer> mapped = new HashMap<String,Integer>();
+				for(String word:tWords)
+				{
+					if(!stopSet.contains(word))
+					{
+						if(!mapped.containsKey(word))
+							mapped.put(word,1);
+						else
+							mapped.put(word,mapped.get(word)+1);
+					}
+				}
+
+				//If the a mapping has repeated unmatched words, the unaligned duplicated word is added to the set.
+				for(String w:mapped.keySet())
+				{
+					if(mapped.get(w)>1)
+						newSet.add(w);
+				}
+				combMap.put(new Mapping(srcId, tgtId, sim, weight),newSet);
+
+
+
+
 			}
 		}
 		return combMap;

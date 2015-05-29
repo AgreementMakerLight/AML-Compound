@@ -1299,10 +1299,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 			if(sourceIndex > -1 && targetIndex > -1 && targetIndex2 > -1)
 			{
-				if(sourceIndex < targetIndex)
-					add(sourceIndex, targetIndex, targetIndex2, similarity, rel);
-				else
-					add(targetIndex, sourceIndex, targetIndex2, similarity, rel);
+				add(sourceIndex, targetIndex, targetIndex2, similarity, rel);
 			}
 
 		}
@@ -1360,10 +1357,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 			//If they are, add the mapping to the maps and proceed to next mapping
 			if(sourceIndex > -1 && targetIndex > -1 && targetIndex2 > -1)
 			{
-				if(sourceIndex < targetIndex && sourceIndex < targetIndex2)
-					add(sourceIndex, targetIndex, targetIndex2, similarity, rel);
-				else
-					add(targetIndex, sourceIndex, targetIndex2,similarity, rel);
+				add(sourceIndex, targetIndex, targetIndex2, similarity, rel);
 			}
 		}
 		inStream.close();
