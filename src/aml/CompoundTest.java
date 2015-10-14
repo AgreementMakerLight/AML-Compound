@@ -16,21 +16,18 @@
  *                                                                             *
  * @originalauthor Daniel Faria                                                *
  * @author Daniela Oliveira                                                    *
- * @date 21-05-2015                                                            *
- * @version 1                                                                  *
+ * @date 14-10-2015                                                            *
+ * @version 1.1                                                                  *
  ******************************************************************************/
 package aml;
 
 import aml.filter.CompoundRankedSelector;
 import aml.match.CompoundAlignment;
-import aml.match.CompoundMapping;
 import aml.match.Alignment;
 import aml.match.Mapping;
 import aml.match.SubMapping;
 import aml.match.WordMatcher;
-import aml.ontology.Lexicon;
-import aml.ontology.URIMap;
-import aml.settings.SelectionType;
+import aml.settings.CompoundSelectionType;
 import aml.util.StopList;
 
 import java.util.ArrayList;
@@ -44,50 +41,53 @@ public class CompoundTest
 
 	public static void main(String[] args) throws Exception
 	{
-		double threshold = 0.5;
+		//Threshold for the first matching step
+		double threshold = 0.4;
+		//Threshold for the second matching step
 		double threshold2 = 0.9;
 
-		//true for performing a permissive ranked selection. false for performing a greedy selection step.
-		boolean ranked = false;
+		//Chose the selector to use.
+		//STRICT for the strict ranked selector
+		//PERMISSIVE for the permissive ranked selector
+		//NONE to ignore the selection step
+		CompoundSelectionType type = CompoundSelectionType.STRICT;
+		
+		//true to apply the Snowball stemmer to the Lexicon
+		boolean stemmer = true;
 
-		//true to open the ontologies with transitive closure.
-		boolean transitive = false;
-
-		//Paths for the .owl files to align. targetPath2 should be the qualifier ontology.
+		//Paths for the .owl files to align.
 		String sourcePath = "store/ontologies/mp.owl";
 		String targetPath1 = "store/ontologies/cl.owl";
 		String targetPath2 = "store/ontologies/pato.owl";
 
-		//referencePath1 is used for the evaluation of the first step. It must be a 1:1 alignment.
+		//Binary reference alignment .rdf file
 		String referencePath1 = "store/ontologies/mp-cl-ref.rdf";
 
-		//referencePath2 is used for the evaluation of the second step. It must be a compound alignment.
+		//Compound reference alignment .rdf file
 		String referencePath2 = "store/ontologies/mp-cl-pato-ref.rdf";
-
-		long time = System.currentTimeMillis()/1000;
-
-		String outputTSV = "store/compoundAlign.tsv";
-		String outputRDF = "store/compoundAlign.rdf";
-
+		
+		//Output files
+		String outputTSV = "store/compoundAlignment.tsv";
+		String outputRDF = "store/compoundAlignment.rdf";
+		
 		System.out.println("Opening Ontologies...");
-		if(transitive)
-			aml.openOntologies(sourcePath, targetPath1, targetPath2,true);
-		else
-			aml.openOntologies(sourcePath, targetPath1, targetPath2,false);
-
+		aml.openOntologies(sourcePath, targetPath1, targetPath2,false,stemmer);
+		
+		long time = System.currentTimeMillis()/1000;
 		System.out.println("Running first WordMatcher");
 		WordMatcher wm1 = new WordMatcher();
-		Alignment w1 = wm1.targetMatch(threshold);
+		Alignment w1 = wm1.match(threshold);
 
-		//Test evaluation after the first WordMatcher
+		//Evaluation after the first WordMatcher
 		if(!referencePath1.equals(""))
 		{
 			aml.openReferenceAlignment(referencePath1);
 			aml.evaluate(w1);
-			System.out.println(aml.getEvaluation().replaceAll("%", ""));
+			System.out.println(aml.getEvaluation());
 		}
 
-
+		//Creates an HashMap with each mapping and the correspondent words
+		//left to align.
 		HashMap<Mapping,List<String>> combMap = addSubMap(w1);
 
 		System.out.println("Running second WordMatcher..");
@@ -97,32 +97,12 @@ public class CompoundTest
 
 		CompoundAlignment compAlignFinal = new CompoundAlignment();
 
-		if(ranked)
-		{
-			CompoundRankedSelector select = new CompoundRankedSelector(SelectionType.PERMISSIVE);
-			compAlignFinal = select.select(compAlign, threshold2);
-		}
-		else
-		{
-			compAlignFinal = new CompoundAlignment();
-			HashMap<Integer, String> rec = aml.getTarget2().getReciprocalClasses();
-			URIMap uris = aml.getURIMap();
-			for(CompoundMapping m : compAlign)
-			{
-
-				CompoundMapping best = compAlign.getBestSourceCompoundMatch(m);
-				if(rec.containsKey(best.getTargetId2()))
-				{
-					best.setTargetId2(uris.getIndex(rec.get(best.getTargetId2())));
-				}
-				compAlignFinal.add(best.getSourceId(), best.getTargetId1(), best.getTargetId2(), best.getSimilarity());
-			}
-		}
-
+		CompoundRankedSelector selected = new CompoundRankedSelector(type);
+		compAlignFinal = selected.select(compAlign);
 		aml.setCompoundAlignment(compAlignFinal);
 
 		time = System.currentTimeMillis()/1000 - time;
-		System.out.println("Ran in " + time + " seconds");
+		System.out.println("Ran for " + time + " seconds");
 
 		if(!outputTSV.equals(""))
 			aml.saveCompoundAlignmentTSV(outputTSV);
@@ -134,20 +114,23 @@ public class CompoundTest
 		{
 			aml.openCompoundReferenceAlignment(referencePath2);
 			aml.evaluateC(compAlignFinal);
-			System.out.println(aml.getCompoundEvaluation().replaceAll("%", ""));
+			System.out.println(aml.getCompoundEvaluation());
 		}
 		System.out.println("Finished.");
 	}
 
 	/**
-	 * 
-	 * @param w1: 1:1 alignment
-	 * @return HashMap with each of the mappings and the corresponding list of unmatched words.
+	 * For each of the labels of the source class, removes the words already matched
+	 * in the first matching step and saves the ones left to match in the second
+	 * matching step.
+	 * @param w1: alignment from the first matching step
+	 * @return HashMap with each of the mappings and the corresponding list 
+	 * of unmatched words.
 	 */
 	public static HashMap<Mapping,List<String>> addSubMap (Alignment w1)
 	{
 		Set<String> stopSet = StopList.read();
-
+		
 		//HashMap keeps the mapping as key and a list of unmatched words of the mapping's source.
 		HashMap<Mapping,List<String>> combMap = new HashMap<Mapping, List<String>>();
 
@@ -164,15 +147,17 @@ public class CompoundTest
 				srcId = s.getSourceId();
 				tgtId = s.getTargetId();
 
-
-				String wordsSource = s.getLabelSource();
-				String wordsTarget = s.getLabelTarget();
 				List<String> sWords = new ArrayList<String>();				
 				List<String> tWords = new ArrayList<String>();	
+				
+				String wordsSource = s.getLabelSource();
+				String wordsTarget = s.getLabelTarget();
+
 				for(String w:wordsSource.split(" "))
 					sWords.add(w);
 				for(String w:wordsTarget.split(" "))
 					tWords.add(w);
+				
 				List<String> newSet = new ArrayList<String>();
 				HashMap<String, Integer> aligned = new HashMap<String, Integer>();
 				for(String word:sWords)
@@ -181,7 +166,7 @@ public class CompoundTest
 						aligned.put(word,1);
 					else
 						aligned.put(word,aligned.get(word)+1);
-					if ((!tWords.contains(word)) && !stopSet.contains(word) && word.matches("^[a-zA-Z0-9]*$"))
+					if (!tWords.contains(word) && !stopSet.contains(word) && word.matches("^[a-zA-Z0-9]*$"))
 					{
 						word = word.replaceAll("[()]", "");
 						newSet.add(word);
@@ -200,17 +185,14 @@ public class CompoundTest
 					}
 				}
 
-				//If the a mapping has repeated unmatched words, the unaligned duplicated word is added to the set.
+				//If the a mapping has repeated unmatched words, the unaligned duplicated
+				//word is added to the set.
 				for(String w:mapped.keySet())
 				{
 					if(mapped.get(w)>1)
 						newSet.add(w);
 				}
 				combMap.put(new Mapping(srcId, tgtId, sim, weight),newSet);
-
-
-
-
 			}
 		}
 		return combMap;

@@ -101,6 +101,8 @@ public class Ontology
 	private Table2Map<Integer,Integer,Integer> maxCard, minCard, card;
 	private Table2Map<Integer,Integer,String> dataAllValues, dataHasValue, dataSomeValues;
 	private Table2Map<Integer,Integer,Integer> objectAllValues, objectSomeValues;
+	
+	private boolean stemmer;
 
 	//Constructors
 
@@ -123,7 +125,6 @@ public class Ontology
 		rm = aml.getRelationshipMap();
 		obsolete = new HashSet<Integer>();
 	}
-
 	/**
 	 * Constructs an Ontology from file 
 	 * @param path: the path to the input Ontology file
@@ -144,6 +145,35 @@ public class Ontology
 		o = manager.loadOntologyFromOntologyDocument(f);
 		uri = f.getAbsolutePath();
 		init(o,isInput);
+		System.out.println(" Done!");
+		//Close the OntModel
+		manager.removeOntology(o);
+		//Reset the entity expansion limit
+		System.clearProperty(LIMIT);
+	}
+
+	/**
+	 * Constructs an Ontology from file 
+	 * @param path: the path to the input Ontology file
+	 * @param isInput: whether the ontology is an input ontology or an external ontology
+	 * @throws OWLOntologyCreationException 
+	 */
+	public Ontology(String path, boolean isInput, boolean stem) throws OWLOntologyCreationException
+	{
+		this();
+		stemmer = stem;
+		//Increase the entity expansion limit to allow large ontologies
+		System.setProperty(LIMIT, "1000000");
+		//Get an Ontology Manager and Data Factory
+		manager = OWLManager.createOWLOntologyManager();
+		factory = manager.getOWLDataFactory();
+		//Load the local ontology
+		File f = new File(path);
+		OWLOntology o;
+		o = manager.loadOntologyFromOntologyDocument(f);
+		uri = f.getAbsolutePath();
+		init(o,isInput);
+		System.out.println(" Done!");
 		//Close the OntModel
 		manager.removeOntology(o);
 		//Reset the entity expansion limit
@@ -225,7 +255,7 @@ public class Ontology
 	{
 		return nameIndex.get(name);
 	}
-	
+
 	public HashMap<Integer, String> getReciprocalClasses()
 	{
 		return reciprocalIndex;
@@ -364,22 +394,22 @@ public class Ontology
 	private void init(OWLOntology o, boolean isInput)
 	{
 		//Update the URI of the ontology (if it lists one)
-
+		System.out.print(o.getOntologyID().getOntologyIRI());
 		if(o.getOntologyID().getOntologyIRI() != null)
 			uri = o.getOntologyID().getOntologyIRI().toString();
 		//Get the classes and their names and synonyms
 		getClasses(o);
-
+		System.out.print(".");
 		//Get the properties
 		getProperties(o,isInput);
-
+		System.out.print(".");
 		//Extend the Lexicon
 		lex.generateStopWordSynonyms();
 		lex.generateParenthesisSynonyms();
 		//Build the relationship map
 		if(isInput)
 			getRelationships(o);
-
+		System.out.print(".");
 	}
 
 	//Processes the classes, their lexical information and cross-references
@@ -403,28 +433,31 @@ public class Ontology
 			//Add it to the global list of URIs
 			int id = uris.addURI(classUri);
 			Set<OWLClassAxiom> tempAx=o.getAxioms(c);
-		    for(OWLClassAxiom ax: tempAx){
+			for(OWLClassAxiom ax: tempAx){
 
-		        for(OWLClassExpression nce:ax.getNestedClassExpressions())
-		        {
+				for(OWLClassExpression nce:ax.getNestedClassExpressions())
+				{
 
 
-		            if(nce.getClassExpressionType()==ClassExpressionType.OBJECT_SOME_VALUES_FROM){
-		            	String[] obj =  nce.toString().split(" ");
-		            	String objProp = obj[0].split("<")[1].replace(">","");
-		            	String objUri = obj[1].replace(")", "").replace("<","").replace(">", "");
+					if(nce.getClassExpressionType()==ClassExpressionType.OBJECT_SOME_VALUES_FROM){
+						//System.out.println(nce);
+						String[] obj =  nce.toString().split(" ");
+						String objProp = obj[0].split("<")[1].replace(">","");
+						//String[] objProp =  obj[0].split("(");
+						String objUri = obj[1].replace(")", "").replace("<","").replace(">", "");
 
-		            	if(objProp.contains("reciprocal_of")){
+						if(objProp.contains("reciprocal_of")){
 
-		            		reciprocalIndex.put(id, objUri);
-		            	}
-		            	
-		            }
-					
-		        }
-		    }
+							reciprocalIndex.put(id, objUri);
+						}
+
+					}
+
+				}
+			}
 			//Get the local name from the URI
 			String name = getLocalName(classUri);
+			//System.out.println(classUri);
 
 			//Add it to the names map
 			nameIndex.put(name,id);
@@ -442,7 +475,10 @@ public class Ontology
 			{
 				//Labels and synonyms go to the Lexicon
 				String propUri = annotation.getProperty().getIRI().toString();
+
+
 				type = LexicalType.getLexicalType(propUri);
+
 				if(type != null)
 				{
 					weight = type.getDefaultWeight();
@@ -450,12 +486,20 @@ public class Ontology
 					{
 						OWLLiteral val = (OWLLiteral) annotation.getValue();
 						name = val.getLiteral();
+
 						String lang = val.getLang();
 						if(lang.equals(""))
 							lang = "en";
-
-						lex.add(id, name, lang, type, "", weight);
-
+						if(lang.equals("en"))
+						{
+						if(stemmer)
+							lex.add(id, name, lang, type, "", weight,true);
+						else
+						{
+							lex.add(id, name, lang, type, "", weight,false);
+							lex.addSynonym(id,name);
+						}
+						}
 					}
 					else if(annotation.getValue() instanceof IRI)
 					{
@@ -469,8 +513,13 @@ public class Ontology
 								String lang = val.getLang();
 								if(lang.equals(""))
 									lang = "en";
-								lex.add(id, name, lang, type, "", weight);
-
+								if(lang.equals("en"))
+								{
+									if(type.equals(LexicalType.LABEL))
+										lex.add(id, name, lang, type, "", weight,true);
+									else
+										lex.add(id, name, lang, type, "", weight,false);
+								}
 							}
 						}
 					}

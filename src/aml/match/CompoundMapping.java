@@ -12,13 +12,14 @@
 * limitations under the License.                                              *
 *                                                                             *
 *******************************************************************************
-* A mapping between terms or properties of two Ontologies, including the      *
+* A mapping between terms or properties of three Ontologies, including the    *
 * similarity and type of relationship between them.                           *
-* An element in an Alignment.                                                 *
+* An element in an CompoundAlignment.                                         *
 *                                                                             *
-* @author Daniel Faria                                                        *
-* @date 23-06-2014                                                            *
-* @version 2.1                                                                *
+* @originalauthor Daniel Faria                                                *
+* @author Daniela Oliveira                                                    *
+* @date 14-10-2015                                                            *
+* @version 1.1                                                                *
 ******************************************************************************/
 package aml.match;
 
@@ -29,20 +30,20 @@ import aml.settings.MappingRelation;
 public class CompoundMapping implements Comparable<CompoundMapping>
 {
 
-//Attributes
+	//Attributes
 
 	//The id of the first source ontology term
 	private int sourceId;
-	//The id of the first target ontology term
+	//The id of the second source ontoloy term
 	private int targetId1;
-	//The id of the second target ontology term
+	//The id of the target ontology term
 	private int targetId2;
 	//The similarity between the terms
 	private double similarity;
 	//The relationship between the terms
 	private MappingRelation rel;
 	
-//Constructors
+	//Constructors
 	public CompoundMapping(int sId)
 	{
 		sourceId = sId;
@@ -169,7 +170,7 @@ public class CompoundMapping implements Comparable<CompoundMapping>
 	}
 	
 	/**
-	 * @return the id of the target 1 term
+	 * @return the id of the second source term
 	 */
 	public int getTargetId1()
 	{
@@ -177,46 +178,36 @@ public class CompoundMapping implements Comparable<CompoundMapping>
 	}	
 
 	/**
-	 * @return the id of the target 2 term
+	 * @return the id of the target term
 	 */
 	public int getTargetId2()
 	{
 		return targetId2;
 	}
 	
-	/**
-	 * Sets the value for the target 2 id to tId
-	 * @param tId: id of the target 1 term
-	 */
 	public void setTargetId1(int tId)
 	{
 		this.targetId1 = tId;
 	}
 	
-	/**
-	 * Sets the value for the target 2 id to tId
-	 * @param tId: id of the target 2 term
-	 */
 	public void setTargetId2(int tId)
 	{
 		this.targetId2 = tId;
 	}
 	
-	/**
-	 * Sets the target 1 and target 2 id and the similarity of the mapping to tId, tId2 and sim, respectively.
-	 * @param tId: id of the target 1 term
-	 * @param tId2: id of the target 2 term
-	 * @param sim: value of similarity
-	 */
+	public void setSim(double sim)
+	{
+		similarity = sim;
+	}
+	
 	public void setValues(int tId, int tId2, double sim)
 	{
 		targetId1 = tId;
 		targetId2 = tId2;
 		similarity = sim;
 	}
-	
 	/**
-	 * Sets the relationship of the mapping to r
+	 * Sets the similarity of the Mapping to sim
 	 * @param r: the relationship between the mapped terms
 	 */
 	public void setRelationship(MappingRelation r)

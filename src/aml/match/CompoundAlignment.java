@@ -12,12 +12,14 @@
  * limitations under the License.                                              *
  *                                                                             *
  *******************************************************************************
- * An alignment between three Ontologies, stored both as a list of Mappings and  *
- * as a Table of indexes, and including methods for input and output.          *
+ * An compound alignment between three Ontologies, stored both as a list of    *
+ * CompoundMappings and as a Table of indexes, and including methods for       * 
+ * input and output.                                                           *
  *                                                                             *
- * @author Daniel Faria                                                        *
- * @date 12-09-2014                                                            *
- * @version 2.1                                                                *
+ * @originalauthor Daniel Faria                                                *
+ * @author Daniela Oliveira                                                    *
+ * @date 14-10-2015                                                            *
+ * @version 1.1                                                                *
  ******************************************************************************/
 package aml.match;
 
@@ -30,8 +32,10 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.Vector;
 
@@ -47,6 +51,7 @@ import aml.ontology.Ontology;
 import aml.ontology.RelationshipMap;
 import aml.ontology.URIMap;
 import aml.settings.MappingRelation;
+import aml.util.Table2Map;
 import aml.util.Table3Map;
 
 public class CompoundAlignment implements Iterable<CompoundMapping>
@@ -56,12 +61,13 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 	//Term mappings organized in list
 	private Vector<CompoundMapping> maps;
-	//Term mappings organized by the source class (Source, Target 1 , Target 2)
+	//Term mappings organized by the first source class (Source, Target 1 , Target 2)
 	private Table3Map<Integer,Integer,Integer,CompoundMapping> sourceMaps;
-	//Term mappings organized by the target 1 class (Target 1 , Source, Target 2)
+	//Term mappings organized by source class (Target 1 , Source, Target 2)
 	private Table3Map<Integer,Integer,Integer,CompoundMapping> targetMaps1;
-	//Term mappings organized by the target 2 class (Target 2, Source, Target 1)
+	//Term mappings organized by target class (Target 2, Source, Target 1)
 	private Table3Map<Integer,Integer,Integer,CompoundMapping> targetMaps2;
+	//
 	private boolean internal;
 
 	//Constructors
@@ -100,7 +106,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	{
 		this();
 		if(file.endsWith(".rdf"))
-			loadMappingsRDF(file);
+			loadMappingsRDF2(file);
 		else if(file.endsWith(".tsv"))
 			loadMappingsTSV(file);
 		else
@@ -125,8 +131,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	 * Otherwise, updates the similarity of the already present Mapping
 	 * to the maximum similarity of the two redundant Mappings
 	 * @param sourceId: the index of the source class to add to the alignment
-	 * @param targetId1: the index of the target 1 class to add to the alignment
-	 * @param targetId2: the index of the target 2 class to add to the alignment
+	 * @param targetId: the index of the target class to add to the alignment
 	 * @param sim: the similarity between the classes
 	 */
 	public void add(int sourceId, int targetId1, int targetId2, double sim)
@@ -163,8 +168,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	 * Otherwise, updates the similarity of the already present Mapping
 	 * to the maximum similarity of the two redundant Mappings
 	 * @param sourceId: the index of the source class to add to the alignment
-	 * @param targetId1: the index of the target 1 class to add to the alignment
-	 * @param targetId2: the index of the target 2 class to add to the alignment
+	 * @param targetId: the index of the target class to add to the alignment
 	 * @param sim: the similarity between the classes
 	 * @param r: the mapping relationship between the classes
 	 */
@@ -181,7 +185,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 		if(sourceMaps == null || !sourceMaps.contains(sourceId,targetId1,targetId2))
 		{
-
+			//System.out.println(sourceId);
 			maps.add(m);
 			sourceMaps.add(sourceId, targetId1, targetId2, m);
 			targetMaps1.add(targetId1, sourceId, targetId2, m);
@@ -191,6 +195,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 		else
 		{
+			//System.out.println(sourceId+" "+targetId1+" "+targetId2);
 			CompoundMapping map = sourceMaps.get(sourceId,targetId1, targetId2);
 
 			if(map.getSimilarity() < sim)
@@ -215,7 +220,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 	/**
 	 * Adds all Mappings in a to this Alignment
-	 * @param a: the CompoundAlignment to add to this Alignment
+	 * @param a: the Alignment to add to this Alignment
 	 */
 	public void addAll(CompoundAlignment a)
 	{
@@ -223,8 +228,8 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	}
 
 	/**
-	 * Adds all CompoundMappings in the given list to this CompoundAlignment
-	 * @param maps: the list of CompoundMappings to add to this CompoundAlignment
+	 * Adds all Mappings in the given list to this Alignment
+	 * @param maps: the list of Mappings to add to this Alignment
 	 */
 	public void addAll(List<CompoundMapping> maps)
 	{
@@ -233,9 +238,9 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	}
 
 	/**
-	 * Adds all CompoundMappings in a to this CompoundAlignment as long as
-	 * they don't conflict with any CompoundMapping in a
-	 * @param a: the CompoundAlignment to add to this ACompoundlignment
+	 * Adds all Mappings in a to this Alignment as long as
+	 * they don't conflict with any Mapping in a
+	 * @param a: the Alignment to add to this Alignment
 	 */
 	public void addAllNonConflicting(CompoundAlignment a)
 	{
@@ -272,9 +277,8 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 	/**
 	 * @param sourceId: the index of the source class to check in the alignment
-	 * @param targetId1: the index of the target 1 class to add to the alignment
-	 * @param targetId2: the index of the target 2 class to add to the alignment
-	 * @return whether the alignment contains a CompoundMapping that is ancestral to the given pair of classes
+	 * @param targetId: the index of the target class to check in the alignment 
+	 * @return whether the alignment contains a Mapping that is ancestral to the given pair of classes
 	 * (i.e. includes one ancestor of sourceId and one ancestor of targetId)
 	 */
 	public boolean containsAncestralMapping(int sourceId, int targetId1, int targetId2)
@@ -301,8 +305,8 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	}
 
 	/**
-	 * @param m: the CompoundMapping to check in the alignment 
-	 * @return whether the CompoundAlignment contains a CompoundMapping that conflicts with the given
+	 * @param m: the Mapping to check in the alignment 
+	 * @return whether the Alignment contains a Mapping that conflicts with the given
 	 * Mapping and has a higher similarity
 	 */
 
@@ -354,9 +358,31 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 		return false;
 	}
 
+	public boolean containsBetterMapping2(CompoundMapping m)
+	{
+		int source = m.getSourceId();
+		double sim = m.getSimilarity();
+
+		if(containsSource(source))
+		{
+			Set<Integer> targets = sourceMaps.keySet(source);
+			for(Integer i : targets)
+			{
+				for(Integer j : sourceMaps.keySet(source, i))
+				{
+
+					if(getSimilarity(source,i,j) > sim)
+						return true;
+				}
+
+			}
+		}
+
+		return false;
+	}
 	/**
 	 * @param classId: the index of the class to check in the alignment 
-	 * @return whether the CompoundAlignment contains a CompoundMapping with that class
+	 * @return whether the Alignment contains a Mapping with that class
 	 * (either as a source or as a target class)
 	 */
 	public boolean containsClass(int classId)
@@ -364,11 +390,12 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 		return containsSource(classId) || containsTarget1(classId) || containsTarget2(classId);
 	}
 
+
+
 	/**
 	 * @param sourceId: the index of the source class to check in the alignment
-	 * @param targetId1: the index of the target 1 class to check in the alignment
-	 * @param targetId2: the index of the target 2 class to check in the alignment
-	 * @return whether the CompoundAlignment contains a CompoundMapping for sourceId or for targetId
+	 * @param targetId: the index of the target class to check in the alignment 
+	 * @return whether the Alignment contains a Mapping for sourceId or for targetId
 	 */
 	public boolean containsConflict(int sourceId, int targetId1, int targetId2)
 	{
@@ -376,8 +403,8 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	}
 
 	/**
-	 * @param m: the CompoundMapping to check in the alignment 
-	 * @return whether the CompoundAlignment contains a CompoundMapping involving either class in m
+	 * @param m: the Mapping to check in the alignment 
+	 * @return whether the Alignment contains a Mapping involving either class in m
 	 */
 	public boolean containsConflict(CompoundMapping m)
 	{
@@ -386,9 +413,8 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 	/**
 	 * @param sourceId: the index of the source class to check in the alignment
-	 * @param targetId1: the index of the target 1 class to check in the alignment
-	 * @param targetId2: the index of the target 2 class to check in the alignment
-	 * @return whether the alignment contains a CompoundMapping that is descendant of the given pair of classes
+	 * @param targetId: the index of the target class to check in the alignment 
+	 * @return whether the alignment contains a Mapping that is descendant of the given pair of classes
 	 * (i.e. includes one descendant of sourceId and one descendant of targetId)
 	 */
 	public boolean containsDescendantMapping(int sourceId, int targetId1, int targetId2)
@@ -416,9 +442,8 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 	/**
 	 * @param sourceId: the index of the source class to check in the alignment
-	 * @param targetId1: the index of the target 1 class to check in the alignment
-	 * @param targetId2: the index of the target 2 class to check in the alignment
-	 * @return whether the CompoundAlignment contains a CompoundMapping between sourceId and targetId
+	 * @param targetId: the index of the target class to check in the alignment
+	 * @return whether the Alignment contains a Mapping between sourceId and targetId
 	 */
 	public boolean containsMapping(int sourceId, int targetId1, int targetId2)
 	{
@@ -426,8 +451,8 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	}
 
 	/**
-	 * @param m: the CompoundMapping to check in the alignment
-	 * @return whether the CompoundAlignment contains a CompoundMapping equivalent to m
+	 * @param m: the Mapping to check in the alignment
+	 * @return whether the Alignment contains a Mapping equivalent to m
 	 */
 	public boolean containsMapping(CompoundMapping m)
 	{
@@ -435,8 +460,8 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	}
 
 	/**
-	 * @param lm: the List of CompoundMapping to check in the alignment
-	 * @return whether the CompoundAlignment contains all the CompoundMapping listed in m
+	 * @param lm: the List of Mapping to check in the alignment
+	 * @return whether the Alignment contains all the Mapping listed in m
 	 */
 	public boolean containsMappings(List<CompoundMapping> lm)
 	{
@@ -448,8 +473,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 	/**
 	 * @param sourceId: the index of the source class to check in the alignment
-	 * @param targetId1: the index of the target 1 class to check in the alignment
-	 * @param targetId2: the index of the target 2 class to check in the alignment
+	 * @param targetId: the index of the target class to check in the alignment 
 	 * @return whether the alignment contains a Mapping that is parent to the
 	 * given pair of classes on one side only
 	 */
@@ -483,25 +507,26 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 		return sourceMaps.contains(sourceId);
 	}
 
+	public int countMappings(int sourceId)
+	{
+		return sourceMaps.entryCount(sourceId);
+
+	}
+
 	/**
-	 * @param targetId1: the index of the target 1 class to check in the alignment
-	 * @return whether the CompoundAlignment contains a CompoundMapping for targetId1
+	 * @param targetId: the index of the target class to check in the alignment
+	 * @return whether the Alignment contains a Mapping for targetId
 	 */
 	public boolean containsTarget1(int targetId1)
 	{
 		return targetMaps1.contains(targetId1);
 	}
-	
-	/**
-	 * 
-	 * @param targetId2: the index of the target 2 class to check in the alignment
-	 * @return whether the CompoundAlignment contains a CompoundMapping for targetId2
-	 */
+
 	public boolean containsTarget2(int targetId2)
 	{
 		return targetMaps2.contains(targetId2);
 	}
-	
+
 
 
 	/**
@@ -515,6 +540,20 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 			if(!a.containsMapping(m))
 				diff.add(m);
 		return diff;
+	}
+	public static String printName(int id, String origin)
+	{
+
+		AML aml = AML.getInstance();
+		String name = "";
+		if(origin.equals("s"))
+			name = aml.getSource().getLexicon().getCorrectedName(id);
+		else if(origin.equals("t"))
+			name = aml.getTarget().getLexicon().getCorrectedName(id);
+		else
+			name = aml.getTarget2().getLexicon().getCorrectedName(id);
+
+		return name;
 	}
 
 	/**
@@ -532,7 +571,6 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 		for(CompoundMapping m : maps)
 		{
-
 			if(ref.containsMapping(m))
 			{
 				if(ref.getRelationship(m.getSourceId(),m.getTargetId1(),m.getTargetId2()).
@@ -541,9 +579,9 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 				else
 
 					correct++;
-			}
-
+			}		
 		}
+
 		for(CompoundMapping m : ref)
 			if(!m.getRelationship().equals(MappingRelation.UNKNOWN))
 				total++;
@@ -581,7 +619,6 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 					correct++;
 			}
-
 		}
 		for(CompoundMapping m : ref)
 			if(!m.getRelationship().equals(MappingRelation.UNKNOWN))
@@ -590,7 +627,6 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 		double precision = 1.0*correct/(found-conflict);
 		double recall = 1.0*correct/total;
 		double fmeasure = 2*precision*recall/(precision+recall);
-
 		return  new Double[] {precision, recall, fmeasure, found, correct, total,};
 	}
 
@@ -610,36 +646,6 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 		return gain;
 	}
 
-	/**
-	 * @param a: the base Alignment to which this Alignment will be compared 
-	 * @return the gain (i.e. the fraction of new Mappings) of this Alignment
-	 * in comparison with the base Alignment
-	 */
-	/*
-	public double gainOneToOne(CompoundAlignment a)
-	{
-		double sourceGain = 0.0;
-		Set<Integer> sources = sourceMaps.keySet();
-		for(Integer i : sources)
-			if(!a.containsSource(i))
-				sourceGain++;
-		sourceGain /= a.sourceCount();
-
-		double targetGain1 = 0.0;
-		Set<Integer> targets1 = targetMaps1.keySet();
-		for(Integer i : targets1)
-			if(!a.containsTarget1(i))
-				targetGain1++;
-
-		double targetGain2 = 0.0;
-		Set<Integer> targets2 = targetMaps2.keySet();
-		for(Integer i : targets2)
-			if(!a.containsTarget2(i)))
-				targetGain2++;
-		targetGain1 /= a.targetCount();
-		return Math.min(sourceGain, targetGain);
-	}
-	 */
 	/**
 	 * @param index: the index of the Mapping to return in the list of Mappings
 	 * @return the Mapping at the input index (note that the index will change
@@ -700,12 +706,45 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 					max = sim;
 					target.setTargetId1(i);
 					target.setTargetId2(j);
-					target.setSimilarity(max);
+					target.setSim(max);
 				}
 			}
-
 		}
 		return target;
+	}
+
+	/**
+	 * @return the high level Alignment induced from this alignment 
+	 */
+	public CompoundAlignment getHighLevelAlignment()
+	{
+		AML aml = AML.getInstance();
+		RelationshipMap rels = aml.getRelationshipMap();
+
+		CompoundAlignment a = new CompoundAlignment();
+		int total = maps.size();
+		for(CompoundMapping m : maps)
+		{
+			Set<Integer> sourceAncestors = rels.getHighLevelAncestors(m.getSourceId());
+			Set<Integer> targetAncestors1 = rels.getHighLevelAncestors(m.getTargetId1());
+			Set<Integer> targetAncestors2 = rels.getHighLevelAncestors(m.getTargetId2());
+			for(int i : sourceAncestors)
+			{
+				for(int j : targetAncestors1)
+				{
+					for(int w : targetAncestors2)
+					{
+						double sim = a.getSimilarity(i, j, w) + 1.0 / total;
+						a.add(i,j,w, sim,MappingRelation.OVERLAP);
+					}
+				}
+			}
+		}
+		CompoundAlignment b = new CompoundAlignment();
+		for(CompoundMapping m : a)
+			if(m.getSimilarity() >= 0.01)
+				b.add(m);
+		return b;
 	}
 
 	/**
@@ -723,23 +762,6 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 	}
 
 	/**
-	 * @param id1: the index of the first class
-	 * @param id2: the index of the second class
-	 * @return the index of the Mapping between the given classes in
-	 * the list of Mappings (in any order), or -1 if the Mapping doesn't exist
-	 */
-	/*
-	public int getIndexBidirectional(int id1, int id2, int id3)
-	{
-		if(sourceMaps.contains(id1, id2, id3))
-			return maps.indexOf(sourceMaps.get(id1, id2));
-		else if(targetMaps.contains(id1, id2))
-			return maps.indexOf(targetMaps.get(id1, id2));
-		else
-			return -1;
-	}
-	 */
-	/**
 	 * @param id: the index of the class to check in the alignment
 	 * @return the list of all classes mapped to the given class
 	 */
@@ -755,42 +777,6 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 		return mappings;
 	}
 
-	/**
-	 * @param sourceId: the index of the source class to check in the alignment
-	 * @return the index of the target class that best matches source
-	 */
-	/*
-	public double getMaxSourceSim(int sourceId)
-	{
-		double max = 0;
-		Set<Integer> targets = sourceMaps.keySet(sourceId);
-		for(Integer i : targets)
-		{
-			double sim = getSimilarity(sourceId,i);
-			if(sim > max)
-				max = sim;
-		}
-		return max;
-	}
-	 */
-	/**
-	 * @param targetId: the index of the target class to check in the alignment
-	 * @return the index of the source class that best matches target
-	 */
-	/*
-	public double getMaxTargetSim(int targetId)
-	{
-		double max = 0;
-		Set<Integer> sources = targetMaps.keySet(targetId);
-		for(Integer i : sources)
-		{
-			double sim = getSimilarity(i,targetId);
-			if(sim > max)
-				max = sim;
-		}
-		return max;
-	}
-	 */
 	/**
 	 * @param sourceId: the index of the source class in the alignment
 	 * @param targetId: the index of the target class in the alignment
@@ -1054,9 +1040,9 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 					"\t" + uris.getURI(m.getTargetId1()) + "\t" + target1.getName(m.getTargetId1()) +
 					"\t" + uris.getURI(m.getTargetId2()) + "\t" + target2.getName(m.getTargetId2()) +
 					"\t" + m.getSimilarity() + "\t" + m.getRelationship().toString());
-			
+
 		}
-			outStream.close();
+		outStream.close();
 	}
 	/**
 	 * Saves the alignment into a .tsv file in AML format. Also shows the ancestors for each class
@@ -1089,14 +1075,14 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 			String a1 = "";
 			String a2 = "";
 			String a3 = "";
-			
+
 			for(Integer s : srcAnc)
 			{
 				a1 += source.getName(s);
 				if(!a1.equals(""))
 					break;
 			}
-			
+
 			for(Integer t : tgtAnc1)
 			{
 				a2 += target1.getName(t);
@@ -1109,17 +1095,17 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 				if(!a3.equals(""))
 					break;
 			}
-			
+
 
 			outStream.println(uris.getURI(m.getSourceId()) + "\t" + source.getName(m.getSourceId()) +
 					"\t" + a1 + "\t" + uris.getURI(m.getTargetId1()) + "\t" + target1.getName(m.getTargetId1()) +
 					"\t" + a2 + "\t" + uris.getURI(m.getTargetId2()) + "\t" + target2.getName(m.getTargetId2()) +
 					"\t" + a3 + "\t" + m.getSimilarity() + "\t" + m.getRelationship().toString());
-			
+
 		}
-			outStream.close();
+		outStream.close();
 	}
-	
+
 	public void saveTSV3(String file) throws FileNotFoundException
 	{
 		AML aml = AML.getInstance();
@@ -1142,9 +1128,9 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 					"\t" + uris.getURI(m.getTargetId1()) + "\t" + target1.getLexicon().getCorrectedName(m.getTargetId1()) +
 					"\t" + uris.getURI(m.getTargetId2()) + "\t" + target2.getLexicon().getCorrectedName(m.getTargetId2()) +
 					"\t" + m.getSimilarity() + "\t" + m.getRelationship().toString());
-			
+
 		}
-			outStream.close();
+		outStream.close();
 	}
 	/**
 	 * @return the number of Mappings in this Alignment
@@ -1257,6 +1243,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 			String sourceURI = e.element("entity1").element("Class").
 					attributeValue("about");
 			uris.addURI(sourceURI);
+
 			//Get the target class
 
 			//Get the both target classes
@@ -1267,11 +1254,15 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 			uris.addURI(targetURI);
 			//Get the target 2
 			String target2URI = elements.get(1).attributeValue("about");
-
 			uris.addURI(target2URI);
 			//Get the similarity measure
 			String measure = e.elementText("measure");
-
+			/*
+			System.out.println(sourceURI);
+			System.out.println(targetURI);
+			System.out.println(target2URI);
+			System.out.println(measure);
+			 */
 			//Parse it, assuming 1 if a valid measure is not found
 			double similarity = 1;
 			if(measure != null)
@@ -1293,6 +1284,83 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 			MappingRelation rel = MappingRelation.parseRelation(StringEscapeUtils.unescapeXml(r));
 			//Check if the URIs are listed in the URI map 
 			int sourceIndex = uris.getIndex(sourceURI);
+			//System.out.println(sourceIndex);
+			int targetIndex = uris.getIndex(targetURI);
+			int targetIndex2 = uris.getIndex(target2URI);
+			//If they are, add the mapping to the maps and proceed to next mapping
+
+			if(sourceIndex > -1 && targetIndex > -1 && targetIndex2 > -1)
+			{
+				add(sourceIndex, targetIndex, targetIndex2, similarity, rel);
+			}
+		}
+	}
+
+	private void loadMappingsRDF2(String file) throws DocumentException
+	{
+		AML aml = AML.getInstance();
+		URIMap uris = aml.getURIMap();
+
+		//Open the alignment file using SAXReader
+		SAXReader reader = new SAXReader();
+
+		File f = new File(file);
+
+		Document doc = reader.read(f);
+		//Read the root, then go to the "Alignment" element
+		Element root = doc.getRootElement();
+
+		Element align = root.element("Alignment");
+		//Get an iterator over the mappings
+		Iterator<?> map = align.elementIterator("map");
+
+		while(map.hasNext())
+		{
+
+			//Get the "Cell" in each mapping
+			Element e = ((Element)map.next()).element("Cell");
+			if(e == null)
+			{
+				continue;
+			}
+			//Get the source class
+			String sourceURI = e.element("entity1").element("Class").
+					attributeValue("about");
+			uris.addURI(sourceURI);
+
+			//Get the both target classes
+			List<Element> elements = e.element("entity2").element("Class").element("and").elements("Class");
+
+			//Get the target 1
+			String targetURI = elements.get(0).attributeValue("about");
+			uris.addURI(targetURI);
+			//Get the target 2
+			String target2URI = elements.get(1).attributeValue("about");
+			uris.addURI(target2URI);
+			//Get the similarity measure
+			String measure = e.elementText("measure");
+
+			//Parse it, assuming 1 if a valid measure is not found
+			double similarity = 1;
+			if(measure != null)
+			{
+				try
+				{
+					similarity = Double.parseDouble(measure);
+					if(similarity < 0 || similarity > 1)
+						similarity = 1;
+				}
+				catch(Exception ex){/*Do nothing - use the default value*/};
+			}
+
+			//Get the relation
+			String r = e.elementText("relation");
+			if(r == null)
+				r = "?";
+			MappingRelation rel = MappingRelation.parseRelation(StringEscapeUtils.unescapeXml(r));
+			//Check if the URIs are listed in the URI map 
+			int sourceIndex = uris.getIndex(sourceURI);
+			//System.out.println(sourceIndex);
 			int targetIndex = uris.getIndex(targetURI);
 			int targetIndex2 = uris.getIndex(target2URI);
 			//If they are, add the mapping to the maps and proceed to next mapping
@@ -1304,6 +1372,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 
 		}
 	}
+
 
 	private void loadMappingsTSV(String file) throws Exception
 	{
@@ -1352,6 +1421,7 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 				rel = MappingRelation.EQUIVALENCE;
 			//Get the indexes
 			int sourceIndex = uris.getIndex(sourceURI);
+			//System.out.println("sourceIndex");
 			int targetIndex = uris.getIndex(targetURI);
 			int targetIndex2 = uris.getIndex(target2URI);
 			//If they are, add the mapping to the maps and proceed to next mapping
@@ -1362,5 +1432,4 @@ public class CompoundAlignment implements Iterable<CompoundMapping>
 		}
 		inStream.close();
 	}
-
 }

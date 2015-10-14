@@ -30,8 +30,10 @@ import java.util.Set;
 import aml.util.StopList;
 import aml.util.StringParser;
 import aml.util.Table2List;
+import aml.util.Table2Set;
 import aml.util.Table2Map;
 import aml.util.Table3List;
+import aml.util.Table3Set;
 
 public class WordLexicon
 {
@@ -44,6 +46,7 @@ public class WordLexicon
 	private Lexicon lex;
 	//The list of stop words to ignore when building this WordLexicon
 	private Set<String> stopSet;
+	private HashMap<String, String> nyms;
 	//The language to use when building this WordLexicon
 	private String language;
 	//The map of words to names, broken into chunks

@@ -28,6 +28,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.Vector;
 
 import org.tartarus.snowball.ext.englishStemmer;
@@ -47,12 +48,13 @@ public class Lexicon
 
 	//The table of names
 	private Table3List<String,Integer,Provenance> names;
+	private HashMap<Integer, Set<String>> nyms;
 	private HashMap<Integer, String> correctedNames;
+	private HashMap<String, Integer> correctedClasses;
 	//The table of classes
 	private Table3List<Integer,String,Provenance> classes;
 	//The language counts
 	private HashMap<String,Integer> langCount;
-	
 
 	englishStemmer stemmer = new englishStemmer();
 
@@ -67,8 +69,10 @@ public class Lexicon
 		names = new Table3List<String,Integer,Provenance>();
 		classes = new Table3List<Integer,String,Provenance>();
 		correctedNames = new HashMap<Integer, String>();
+		correctedClasses = new HashMap<String, Integer>();
 		langCount = new HashMap<String,Integer>();
-		
+		nyms = new HashMap<Integer, Set<String>>();
+
 	}
 
 	/**
@@ -81,7 +85,9 @@ public class Lexicon
 		classes = new Table3List<Integer,String,Provenance>(l.classes);
 		langCount = new HashMap<String,Integer>(l.langCount);
 		correctedNames = new HashMap<Integer, String>();
-	
+		correctedClasses = new HashMap<String, Integer>();
+		nyms = new HashMap<Integer, Set<String>>();
+
 	}
 
 	/**
@@ -116,135 +122,9 @@ public class Lexicon
 	 * @param type: the type of lexical entry (localName, label, etc)
 	 * @param source: the source of the lexical entry (ontology URI, etc)
 	 */
-	public void add(int classId, String name, LexicalType type, String source, double weight, boolean localName)
-	{
-		//First ensure that the name is not null or empty, and (since we're assuming that
-		//the language is English by default, ensure that it contains Latin characters)
-		if(name == null || name.equals("") || !name.matches(".*[a-zA-Z].*"))
-			return;
-
-		String s;
-		String lang = "en";
-		Provenance p;
-
-		//If it is a formula, parse it and label it as such
-		if(StringParser.isFormula(name))
-		{
-			s = StringParser.normalizeFormula(name);
-			p = new Provenance(LexicalType.FORMULA, source, lang, weight);
-		}
-		//Otherwise, parse it normally
-		else
-		{
-			s = StringParser.normalizeName(name);
-			p = new Provenance(type, source, lang, weight);
-		}
-		//Then update the tables
-		String[] splitString = s.split(" ");
-		String wordCopy = "";
-
-		for(String ss : splitString){
-
-			stemmer.setCurrent(ss);
-			if (stemmer.stem()){
-				if(wordCopy.equals(""))
-					wordCopy += stemmer.getCurrent();
-				else
-					wordCopy += " "+stemmer.getCurrent();
-			}
-		}
-		names.add(wordCopy,classId,p);
-		if(localName)
-			correctedNames.put(classId, s);
-		classes.add(classId,wordCopy,p);
-		Integer i = langCount.get(lang);
-		if(i == null)
-			langCount.put(lang, 1);
-		else
-			langCount.put(lang, i+1);
-	}
-
-	/**
-	 * Adds a new entry to the Lexicon
-	 * @param classId: the class to which the name belongs
-	 * @param name: the name to add to the Lexicon
-	 * @param language: the language of the name
-	 * @param type: the type of lexical entry (localName, label, etc)
-	 * @param source: the source of the lexical entry (ontology URI, etc)
-	 */
-	public void add(int classId, String name, String language, LexicalType type, String source, double weight, boolean localName)
-	{
-		//First ensure that the name is not null or empty
-		if(name == null || name.equals(""))
-			return;
-
-		String s;
-		Provenance p;
-
-		//If the name is not in english we parse it as a formula
-		if(!language.equals("en"))
-		{
-			s = StringParser.normalizeFormula(name);
-			p = new Provenance(type, source, language, weight);
-		}
-		//Otherwise
-		else
-		{
-			//If it doesn't contain Latin characters, don't add it
-			if(!name.matches(".*[a-zA-Z].*"))
-				return;
-			//If it is a formula, parse it and label it as such
-			else if(StringParser.isFormula(name))
-			{
-				s = StringParser.normalizeFormula(name);
-				p = new Provenance(LexicalType.FORMULA, source, language, weight);
-			}
-			//Otherwise, parse it normally
-			else
-			{
-				
-				s = StringParser.normalizeName(name);
-				
-				p = new Provenance(type, source, language, weight);
-			}
-		}
-
-		//Then update the tables
-		
-		String[] splitString = s.split(" ");
-		String wordCopy = "";
-
-		for(String ss : splitString){
-			
-
-			stemmer.setCurrent(ss);
-			if (stemmer.stem()){
-				if(wordCopy.equals(""))
-					wordCopy += stemmer.getCurrent();
-				else
-					wordCopy += " "+stemmer.getCurrent();
-			}
-		}
-
-		names.add(wordCopy,classId,p);
-		if(localName)
-			correctedNames.put(classId, s);
-		classes.add(classId,wordCopy,p);
-		Integer i = langCount.get(language);
-		if(i == null)
-			langCount.put(language, 1);
-		else
-			langCount.put(language, i+1);
-	}
-	/**
-	 * Adds a new entry to the Lexicon
-	 * @param classId: the class to which the name belongs
-	 * @param name: the name to add to the Lexicon
-	 * @param type: the type of lexical entry (localName, label, etc)
-	 * @param source: the source of the lexical entry (ontology URI, etc)
-	 */
 	public void add(int classId, String name, LexicalType type, String source, double weight)
 	{
+		//System.out.println(name);
 		//First ensure that the name is not null or empty, and (since we're assuming that
 		//the language is English by default, ensure that it contains Latin characters)
 		if(name == null || name.equals("") || !name.matches(".*[a-zA-Z].*"))
@@ -280,10 +160,15 @@ public class Lexicon
 					wordCopy += " "+stemmer.getCurrent();
 			}
 		}
-		names.add(wordCopy,classId,p);
 
+		if(type.equals(LexicalType.LABEL)){
 			correctedNames.put(classId, s);
+			correctedClasses.put(s, classId);
+
+		}
+		names.add(wordCopy,classId,p);
 		classes.add(classId,wordCopy,p);
+
 		Integer i = langCount.get(lang);
 		if(i == null)
 			langCount.put(lang, 1);
@@ -301,6 +186,153 @@ public class Lexicon
 	 */
 	public void add(int classId, String name, String language, LexicalType type, String source, double weight)
 	{
+
+		//System.out.println(name);
+		//First ensure that the name is not null or empty
+		if(name == null || name.equals(""))
+			return;
+
+		String s;
+		Provenance p;
+
+		//If the name is not in english we parse it as a formula
+		if(!language.equals("en"))
+		{
+			s = StringParser.normalizeFormula(name);
+			p = new Provenance(type, source, language, weight);
+		}
+
+		//Otherwise
+		else
+		{
+			//If it doesn't contain Latin characters, don't add it
+			if(!name.matches(".*[a-zA-Z].*"))
+				return;
+			//If it is a formula, parse it and label it as such
+			else if(StringParser.isFormula(name))
+			{
+				s = StringParser.normalizeFormula(name);
+				p = new Provenance(LexicalType.FORMULA, source, language, weight);
+			}
+			//Otherwise, parse it normally
+			else
+			{
+				s = StringParser.normalizeName(name);
+				p = new Provenance(type, source, language, weight);
+			}
+		}
+
+		//Then update the tables
+
+		String[] splitString = s.split(" ");
+		String wordCopy = "";
+
+		for(String ss : splitString){
+			stemmer.setCurrent(ss);
+			if (stemmer.stem()){
+				if(wordCopy.equals(""))
+					wordCopy += stemmer.getCurrent();
+				else
+					wordCopy += " "+stemmer.getCurrent();
+			}
+		}
+
+		if(type.equals(LexicalType.LABEL)){
+			correctedNames.put(classId, s);
+			correctedClasses.put(s, classId);
+		}
+		names.add(wordCopy,classId,p);
+		classes.add(classId,wordCopy,p);
+
+		Integer i = langCount.get(language);
+		if(i == null)
+			langCount.put(language, 1);
+		else
+			langCount.put(language, i+1);
+	}
+	/**
+	 * Adds a new entry to the Lexicon
+	 * @param classId: the class to which the name belongs
+	 * @param name: the name to add to the Lexicon
+	 * @param type: the type of lexical entry (localName, label, etc)
+	 * @param source: the source of the lexical entry (ontology URI, etc)
+	 */
+	public void add(int classId, String name, LexicalType type, String source, double weight, boolean stem)
+	{
+		//System.out.println(name);
+		//First ensure that the name is not null or empty, and (since we're assuming that
+		//the language is English by default, ensure that it contains Latin characters)
+		if(name == null || name.equals("") || !name.matches(".*[a-zA-Z].*"))
+			return;
+
+		String s;
+		String lang = "en";
+		Provenance p;
+
+		//If it is a formula, parse it and label it as such
+		if(StringParser.isFormula(name))
+		{
+			s = StringParser.normalizeFormula(name);
+			p = new Provenance(LexicalType.FORMULA, source, lang, weight);
+
+		}
+
+		//Otherwise, parse it normally
+		else
+		{
+			s = StringParser.normalizeName(name);
+			p = new Provenance(type, source, lang, weight);
+		}
+		//Then update the tables
+		String[] splitString = s.split(" ");
+		String wordCopy = "";
+
+		for(String ss : splitString){
+
+			stemmer.setCurrent(ss);
+			if (stemmer.stem()){
+				if(wordCopy.equals(""))
+					wordCopy += stemmer.getCurrent();
+				else
+					wordCopy += " "+stemmer.getCurrent();
+			}
+		}
+
+		if(type.equals(LexicalType.LABEL)){
+			correctedClasses.put(s, classId);
+			correctedNames.put(classId, s);
+		}
+
+		if(stem)
+		{
+			names.add(wordCopy,classId,p);
+			classes.add(classId,wordCopy,p);
+		}
+		else
+		{
+			names.add(s,classId,p);
+			classes.add(classId,s,p);
+		}
+
+		Integer i = langCount.get(lang);
+		if(i == null)
+			langCount.put(lang, 1);
+		else
+			langCount.put(lang, i+1);
+	}
+
+	/**
+	 * Adds a new entry to the Lexicon
+	 * @param classId: the class to which the name belongs
+	 * @param name: the name to add to the Lexicon
+	 * @param language: the language of the name
+	 * @param type: the type of lexical entry (localName, label, etc)
+	 * @param source: the source of the lexical entry (ontology URI, etc)
+	 */
+	public void add(int classId, String name, String language, LexicalType type, String source, double weight, boolean stem)
+	{
+
+		//System.out.println(name);
 		//First ensure that the name is not null or empty
 		if(name == null || name.equals(""))
 			return;
@@ -329,21 +361,19 @@ public class Lexicon
 			//Otherwise, parse it normally
 			else
 			{
-				
+
 				s = StringParser.normalizeName(name);
-				
+
 				p = new Provenance(type, source, language, weight);
 			}
 		}
 
 		//Then update the tables
-		
+
 		String[] splitString = s.split(" ");
 		String wordCopy = "";
 
 		for(String ss : splitString){
-			
-
 			stemmer.setCurrent(ss);
 			if (stemmer.stem()){
 				if(wordCopy.equals(""))
@@ -353,15 +383,51 @@ public class Lexicon
 			}
 		}
 
-		names.add(wordCopy,classId,p);
+		names.add(s,classId,p);
+		if(type.equals(LexicalType.LABEL)){
+			correctedClasses.put(s, classId);
+			correctedNames.put(classId, s);
+		}
 
-		correctedNames.put(classId, s);
-		classes.add(classId,wordCopy,p);
+		if(stem)
+		{
+			names.add(wordCopy,classId,p);
+			classes.add(classId,wordCopy,p);
+		}
+		else
+		{
+			names.add(s,classId,p);
+			classes.add(classId,s,p);
+		}
 		Integer i = langCount.get(language);
 		if(i == null)
 			langCount.put(language, 1);
 		else
 			langCount.put(language, i+1);
+	}
+	
+	public void addSynonym(Integer id, String name)
+	{
+
+		stemmer.setCurrent(StringParser.normalizeName(name));
+		stemmer.stem();
+		name = stemmer.getCurrent();
+		if(nyms.containsKey(id))
+		{
+			Set<String> names = nyms.get(id);
+			names.add(name);
+		}
+		else
+		{
+			Set<String> temp = new TreeSet<String>();
+			temp.add(name);
+			nyms.put(id, temp);
+		}
+	}
+	
+	public HashMap<Integer, Set<String>> getSynonyms()
+	{
+		return nyms;
 	}
 
 	/**
@@ -580,10 +646,14 @@ public class Lexicon
 		}
 		return bestName;
 	}
-	
+
 	public String getCorrectedName(int classId)
 	{
 		return correctedNames.get(classId);
+	}
+	public Integer getCorrectedClass(String name)
+	{
+		return correctedClasses.get(name);
 	}
 	/**
 	 * @param name: the class name to search in the Lexicon

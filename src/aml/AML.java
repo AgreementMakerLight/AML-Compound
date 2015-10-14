@@ -17,14 +17,16 @@
  * instance of this class in the whole application. All classes can access it  *
  * without reference, by invoking the static method AML.getInstance()          *
  *                                                                             *
- * @author Daniel Faria                                                        *
- * @date 29-09-2014                                                            *
- * @version 2.1                                                                *
+ * @originalauthor Daniel Faria                                                *
+ * @author Daniela Oliveira                                                    *
+ * @date 14-10-2015                                                            *
+ * @version 1.1                                                                *
  ******************************************************************************/
 package aml;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
@@ -150,10 +152,10 @@ public class AML
 				bkSources.add(f.getName());
 			bkSources.add("WordNet");
 		}
-		else
+		/*else
 		{
 			System.out.println("WARNING: 'store/knowledge' directory not found!");
-		}
+		}*/
 		selectedSources = new Vector<String>(bkSources);
 
 		size = SizeCategory.getSizeCategory();
@@ -220,7 +222,6 @@ public class AML
 	public String evaluateC(CompoundAlignment a)
 	{
 		aC = a;
-
 		boolean gui = userInterface != null;
 		evaluationC = aC.evaluate(refC, gui);
 
@@ -405,31 +406,7 @@ public class AML
 	{
 		return source != null && target != null;
 	}
-/*
-	public void matchAuto()
-	{
-		a = AutomaticMatcher.match();
-		if(a.size() >= 1)
-			currentMapping = 0;
-		else
-			currentMapping = -1;
-		evaluation = null;
-		if(userInterface != null)
-			userInterface.refresh();
-	}
 
-	public void matchManual()
-	{
-		a = ManualMatcher.match();
-		if(a.size() >= 1)
-			currentMapping = 0;
-		else
-			currentMapping = -1;
-		evaluation = null;
-		if(userInterface != null)
-			userInterface.refresh();
-	}
-*/
 	public void nextMapping()
 	{
 		if(currentMapping == a.size()-1)
@@ -529,7 +506,7 @@ public class AML
 	}
 
 
-	public void openOntologies(String src, String tgt, String tgt2, boolean closure) throws OWLOntologyCreationException
+	public void openOntologies(String src, String tgt, String tgt2, boolean closure, boolean stemmer) throws OWLOntologyCreationException
 	{
 		//Initialize the URIMap and RelationshipMap
 		uris = new URIMap();
@@ -537,9 +514,11 @@ public class AML
 		if(useReasoner)
 			PropertyConfigurator.configure("log4j.properties");
 		long time = System.currentTimeMillis()/1000;
-		System.out.println("Loading source ontology");	
-		source = new Ontology(src,true);
-		
+		System.out.println("Loading source ontology");
+		if(stemmer)
+			source = new Ontology(src,true,true);
+		else
+			source = new Ontology(src,true,false);
 		time = System.currentTimeMillis()/1000 - time;
 		System.out.println(source.getURI() + " loaded in " + time + " seconds");
 		System.out.println("Classes: " + source.classCount());	
@@ -547,8 +526,10 @@ public class AML
 		System.out.println("Properties: " + source.propertyCount());
 		time = System.currentTimeMillis()/1000;
 		System.out.println("Loading target ontology");	
-		 
-		target = new Ontology(tgt,true);
+		if(stemmer)
+			target = new Ontology(tgt,true,true);
+		else
+			target = new Ontology(tgt,true,false);
 		
 		time = System.currentTimeMillis()/1000 - time;
 		System.out.println(target.getURI() + " loaded in " + time + " seconds");
@@ -557,8 +538,10 @@ public class AML
 		System.out.println("Properties: " + target.propertyCount());
 		System.out.println("Direct Relationships: " + rels.relationshipCount());
 		time = System.currentTimeMillis()/1000;
-		 
-		target2 = new Ontology(tgt2,true);
+		if(stemmer)
+			target2 = new Ontology(tgt2,true,true);
+		else
+			target2 = new Ontology(tgt2,true,false);
 		
 		time = System.currentTimeMillis()/1000 - time;
 		System.out.println(target2.getURI() + " loaded in " + time + " seconds");

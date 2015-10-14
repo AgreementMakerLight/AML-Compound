@@ -30,5 +30,5 @@ public interface CompoundSelector
 	 * @param thresh: the minimum similarity threshold
 	 * @return the selected Alignment
 	 */
-	public CompoundAlignment select(CompoundAlignment a, double thresh);
+	public CompoundAlignment select(CompoundAlignment a);
 }

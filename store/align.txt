@@ -1,5 +1,0 @@
-#AgreementMakerLight Alignment File
-#Source ontology:	http://human.owl
-#Target ontology:	http://mouse.owl
-Source URI	Source Label	Target URI	Target Label	Similarity	Relationship
-http://human.owl#NCI_C13236	body fluid or substance	http://mouse.owl#MA_0002450	body fluid substance	0.0112	^
