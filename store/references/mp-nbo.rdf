@@ -1,0 +1,3542 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+         xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+         xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+         xmlns:align='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+         xmlns:edoal='http://ns.inria.org/edoal/1.0/'>
+<align:Alignment>
+  <align:xml>yes</align:xml>
+  <align:level>2EDOAL</align:level>
+  <align:type>**</align:type>
+  <align:method>fr.inrialpes.exmo.align.impl.method.StringDistAlignment</align:method>
+  <align:time>7</align:time>
+  <align:onto1>
+    <align:Ontology rdf:about="http://purl.obolibrary.org/obo/mp.owl">
+     <align:location>http://purl.obolibrary.org/obo/mp.owl</align:location>
+     <align:formalism>
+        <align:Formalism align:name="OWL1.0" align:uri="http://www.w3.org/2002/07/owl#" />
+      </align:formalism>
+    </align:Ontology>
+  </align:onto1>
+  <align:onto2>
+    <align:Ontology rdf:about="http://purl.obolibrary.org/obo/nbo.owl">
+      <align:location>http://purl.obolibrary.org/obo/nbo.owl</align:location>
+      <align:formalism>
+        <align:Formalism align:name="OWL1.0" align:uri="http://www.w3.org/2002/07/owl#" />
+      </align:formalism>
+    </align:Ontology>
+  </align:onto2>
+ <align:onto3>
+    <align:Ontology rdf:about="http://purl.obolibrary.org/obo/pato.owl">
+      <align:location>http://purl.obolibrary.org/obo/pato.owl</align:location>
+      <align:formalism>
+        <align:Formalism align:name="OWL1.0" align:uri="http://www.w3.org/2002/07/owl#" />
+      </align:formalism>
+    </align:Ontology>
+  </align:onto3>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0000436"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000020"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001353"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000107"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001354"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000110"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001355"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000125"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001356"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000111"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001357"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000104"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001358"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000112"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001360"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000148"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001362"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000092"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001363"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000092"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001364"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000092"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001375"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002948"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001376"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000146"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001380"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000548"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001382"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002379"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001386"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000152"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001388"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000001"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001389"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000444"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001391"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000445"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001392"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000013"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001404"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000449"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001405"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000339"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001406"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000361"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001407"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000362"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001409"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000567"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001410"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000570"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001412"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000057"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001413"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000097"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001415"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000097"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001417"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000097"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001423"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002660"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001425"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000131"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001432"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002773"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001435"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000401"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001436"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000054"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001437"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000418"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001440"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000027"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001441"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000027"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001442"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000027"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001446"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000561"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001447"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000157"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001448"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000052"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001454"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000224"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001458"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000551"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001460"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000172"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001462"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000210"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001463"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000175"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001468"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000180"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001469"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000223"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001485"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000576"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001486"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000391"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001488"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000391"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001489"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000391"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001490"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000583"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001492"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000575"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001500"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000728"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001501"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000024"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001502"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000166"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001504"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000355"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001513"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000584"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001522"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000371"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001523"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000578"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001524"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000342"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001525"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000318"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001529"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000037"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001961"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000389"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001968"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000330"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001970"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000331"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001973"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000335"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001980"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000336"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001981"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000336"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001982"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000336"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001987"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002702"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001988"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002916"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001993"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000415"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001994"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000415"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0001995"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000415"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002061"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000015"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002062"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000171"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002065"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000018"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002068"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000044"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002069"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000079"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002554"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002234"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002555"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0003161"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002556"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001915"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002557"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000011"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002560"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000166"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002562"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000166"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002563"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000166"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002564"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000166"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002565"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000166"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002566"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000014"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002570"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002702"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002572"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000003"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002574"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000448"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002638"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000412"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002730"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000023"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002733"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000335"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002734"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000334"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002735"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000333"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002738"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000332"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002757"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000448"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002797"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000381"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002798"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000217"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002799"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000218"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002800"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000553"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002801"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000552"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002802"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000641"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002803"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000212"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002804"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000174"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002805"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000211"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002806"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000221"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002807"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000227"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002808"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000560"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002849"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000136"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002850"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002994"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002862"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000578"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002863"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000578"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002887"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000709"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002906"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000709"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0002980"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000577"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003043"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000331"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003062"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000103"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003063"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000103"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003064"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000103"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003106"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000091"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003107"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000086"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003158"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000545"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003238"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000159"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003239"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000159"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003312"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000339"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003313"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000447"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003360"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000085"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003459"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000091"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003460"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000091"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003461"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000098"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003462"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000099"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003491"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000403"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003492"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000388"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003545"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000131"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003546"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000131"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003858"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000339"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003862"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000110"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003863"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000107"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003908"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000567"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003998"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000335"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0003999"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000218"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0004000"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000218"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0004263"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000357"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0004270"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000332"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0004844"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000416"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0004845"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000416"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0004924"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000313"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005307"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000571"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005316"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000332"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005356"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000380"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005357"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000102"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005407"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000331"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005449"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000134"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005498"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000332"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005655"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000015"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0005656"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000015"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0006156"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000446"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0006243"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000412"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0006299"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000214"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0006358"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000576"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0006359"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000391"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0006377"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000581"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0008414"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000556"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0008428"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000555"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0008431"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000557"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0008432"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000599"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0008531"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000333"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0008532"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000333"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0008779"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000150"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0008819"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000073"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009326"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000154"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009327"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000559"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009393"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000358"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009453"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000223"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009454"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000223"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009455"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000224"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009456"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000224"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009619"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000574"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009711"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000222"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009712"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000222"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009713"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000222"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009731"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000155"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009745"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001679"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009746"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001679"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009747"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001679"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009748"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001728"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009749"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001728"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009750"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001728"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009751"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001763"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009752"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002065"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009753"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002021"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009754"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001987"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009755"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001763"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009756"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002065"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009757"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002021"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009758"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001987"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009774"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0003142"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009775"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0003142"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009776"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0003142"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009777"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002362"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009778"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002362"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0009779"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002362"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0010165"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002569"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0010166"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002569"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0010167"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002569"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0010323"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000101"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0010540"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000362"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0010698"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000119"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0011000"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000450"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0011020"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000538"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0011022"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000537"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0011275"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001571"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+<align:map>
+	<align:Cell>
+		<align:entity1>
+			<edoal:Class rdf:about="http://purl.obolibrary.org/obo/MP_0011396"/>
+		</align:entity1>
+		<align:entity2>
+			<edoal:Class>
+				<edoal:and rdf:parseType="Collection">
+					<edoal:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000024"/>
+				</edoal:and>
+			</edoal:Class>
+		</align:entity2>
+		<measure rdf:datatype="xsd:float">1.0</measure>
+		<relation>=</relation>
+	</align:Cell>
+</align:map>
+</align:Alignment>
+</rdf:RDF>
