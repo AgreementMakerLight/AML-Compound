@@ -38,7 +38,7 @@ public class Translator
 	
 //Attributes
 	
-	private HashMap<String,Language> lang;
+	private HashMap<String, Language> lang;
 	private boolean authenticated;
 
 //Constructors
