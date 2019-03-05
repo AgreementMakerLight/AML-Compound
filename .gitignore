@@ -4,6 +4,8 @@
 
 ### Eclipse ###
 
+store/
+
 .metadata
 bin/
 tmp/
