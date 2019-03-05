@@ -63,8 +63,9 @@
   matches between three different ontologies. It is also       
   specialized on biomedical ontologies but it can possibly    
   be applied to other domains. It is described in:            
-  - Oliveira, D. and Pesquita, C. (2015). Compound matching   
-  of biomedical ontologies. In International Conference on    
-  Biomedical Ontology (ICBO) (to appear).                     
+  - Oliveira, D., & Pesquita, C. (2018). Improving the 
+  interoperability of biomedical ontologies with compound 
+  alignments. Journal of biomedical semantics, 9(1), 1. 
+  doi:10.1186/s13326-017-0171-8                
 
 
